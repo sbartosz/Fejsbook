@@ -22,7 +22,7 @@
 	<span style="float: right">	
 		<% if signed_in? %>
 		<%= link_to_unless_current "Użytkownicy", users_path %> |
-		<%= link_to_unless_current "Profil", current_user %> |
+		<%= link_to_unless_current "Profil ("+current_user.name+")", current_user %> |
 		<%= link_to_unless_current "Ustawienia", edit_user_path(current_user) %> |
 		<% end %>
 		<% if signed_in? %>	

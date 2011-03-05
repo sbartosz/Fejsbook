@@ -157,8 +157,8 @@ table.microposts tr td.micropost {
 
 table.microposts tr td.micropost span.timestamp {
   display: block;
-  font-size: 85%;
-  color: #666;
+  font-size: 5px;
+  color: red;
 }
 
 div.user_info img {

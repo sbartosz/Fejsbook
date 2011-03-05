@@ -19,7 +19,7 @@ Twitt::Application.routes.draw do
   match '/help',    :to => 'pages#help'	
 
 
-  get "pages/home"
+  #get "pages/home"
 
   get "pages/contact"
 
