@@ -9,7 +9,6 @@ Twitt::Application.routes.draw do
   match '/signin',  :to => 'sessions#new'
   match '/signout', :to => 'sessions#destroy'
   
-
   get "sessions/new"
 
    #get "users/new"

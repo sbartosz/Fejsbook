@@ -100,11 +100,17 @@ float: left;
 width: 300px;
 }
 #main_content {
-9.4 Updating the user hub
-margin-left:
-279
-320px;
+margin-left: 320px;
 }
+
+
+td.sidebar {
+  width: 30%;
+  padding: 1em;
+  vertical-align: top;
+  background: #ccc;
+}
+
 .sidebar_box {
 background-color: #ddd;
 border: 1px solid #aaa;
@@ -157,7 +163,7 @@ table.microposts tr td.micropost {
 
 table.microposts tr td.micropost span.timestamp {
   display: block;
-  font-size: 5px;
+  font-size: 3px;
   color: red;
 }
 
