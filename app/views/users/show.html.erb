@@ -1,0 +1,40 @@
+<table class="profile" summary="Profile information">
+  <tr>
+    <td class="main">
+      <h1>   
+         <%= gravatar_image_tag @user.email %>
+ 	 <%= @user.name %>
+      </h1>
+
+
+	<% unless @user.microposts.empty? %>
+	<table class="microposts" summary="User microposts">
+
+	<% @microposts.each do |micropost| %>
+
+		<tr>
+		<td class="micropost">
+
+		<span class="content"><%= micropost.content %></span>
+		<span class="timestamp">
+		Wysłany <%= time_ago_in_words(micropost.created_at) %> temu.
+		</span>
+
+		</td>
+		</tr>
+
+	<% end %>
+
+	</table>
+	<% end %>
+
+
+    </td>
+    <td class="sidebar round">
+      <strong>Nick</strong> <%= @user.name %><br />
+      <strong>URL</strong>  <%= link_to user_path(@user), @user %><br />
+      <strong>Posty</strong> <%= @user.microposts.count %>
+    </td>
+  </tr>
+</table>
+

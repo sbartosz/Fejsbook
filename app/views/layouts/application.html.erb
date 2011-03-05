@@ -1,14 +1,49 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Twitt</title>
-  <%= stylesheet_link_tag :all %>
-  <%= javascript_include_tag :defaults %>
-  <%= csrf_meta_tag %>
-</head>
-<body>
+  <head>
+    <title><%= @title %></title>
+    <%= csrf_meta_tag %>
+    <!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->    
+    <%= stylesheet_link_tag 'blueprint/screen', :media => 'screen' %>
+    <%= stylesheet_link_tag 'blueprint/print',  :media => 'print' %>
+    <!--[if lt IE 8]><%= stylesheet_link_tag 'blueprint/ie' %><![endif]-->
+    <%= stylesheet_link_tag 'custom', :media => 'screen' %>
+  </head>
+  <body>
 
-<%= yield %>
+
+
+<div id="whole_page">
+<div id="header">facebook</div>
+
+	<div id="nav">
+	<span style="float: right">	
+		<% if signed_in? %>
+		<%= link_to_unless_current "Użytkownicy", users_path %> |
+		<%= link_to_unless_current "Profil", current_user %> |
+		<%= link_to_unless_current "Ustawienia", edit_user_path(current_user) %> |
+		<% end %>
+		<% if signed_in? %>	
+		<%= link_to "Wyloguj", signout_path, :method => :delete %>
+		<% else %>
+		<%= link_to "Zaloguj", signin_path %>
+		<% end %>
+	</span>	
+	<%= link_to_unless_current "Start", root_path %> |
+        <%= link_to_unless_current "O nas", '#' %> |
+	<%= link_to_unless_current "Kontakt", {:controller => "pages", :action => "contact"} %>
+	</div>
+
+	<div id="content">	
+		<% if flash[:notice] -%>
+		<div id="notice"><%= flash[:notice] %></div>
+		<% end %>
+		<%= yield %>
+	</div>
+
+</div>
 
 </body>
 </html>

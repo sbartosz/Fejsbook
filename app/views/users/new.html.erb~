@@ -1,0 +1,26 @@
+<h1>Rejestracja</h1>
+<%= form_for(@user) do |f| %>
+<fieldset>
+<legend>Wprowadz dane:</legend>
+  <%= render 'shared/error_messages' %>
+  <div class="field">
+    <%= f.label "Nick" %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.text_field :email %>
+  </div>
+  <div class="field">
+    <%= f.label "Haslo" %><br />
+    <%= f.password_field :password %>
+  </div>
+  <div class="field">
+    <%= f.label :password_confirmation, "Potwierdz haslo" %><br />
+    <%= f.password_field :password_confirmation %>
+  </div>
+  <div class="actions">
+    <%= f.submit "Zapisz sie" %>
+  </div>
+</fieldset>
+<% end %>

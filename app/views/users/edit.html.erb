@@ -1,0 +1,30 @@
+<h1>Ustawienia konta</h1>
+
+<%= form_for(@user) do |f| %>
+ <fieldset>
+<legend>Edytuj swoje dane:</legend> 
+  <div class="form_now">
+    <%= f.label "Avatar" %>
+    <%= gravatar_image_tag @user.email %>	
+    <a href="http://gravatar.com/emails">Zmień avatar</a>
+  </div>
+  <div class="form_row">
+    <%= f.label "Nick" %>
+    <%= f.text_field :name %>
+  </div>
+  <div class="form_row">
+    <%= f.label "Email" %>
+    <%= f.text_field :email %>
+  </div>
+  <div class="form_row">
+    <%= f.label "Hasło" %>
+    <%= f.password_field :password %>
+  </div>
+  <div class="form_row">
+    <%= f.label :password_confirmation, "Potwierdź hasło" %>
+    <%= f.password_field :password_confirmation %>
+  </div>
+  <div class="form_row">
+    <%= f.submit "Zmień dane", :class => "submit" %>
+  </div>
+<% end %>

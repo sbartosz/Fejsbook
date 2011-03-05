@@ -1,0 +1,22 @@
+<h2>Logowanie</h2>
+
+<%= form_for(:session, :url => sessions_path) do |f| %>
+<fieldset>
+<legend>Wprowadź dane:</legend>
+  <div class="form_row">
+    <%= f.label "Email" %>
+    <%= f.text_field :email %>
+  </div>
+  <div class="form_row">
+    <%= f.label "Hasło" %>
+    <%= f.password_field :password %>
+  </div>
+  <div class="form_row">
+    <%= f.submit "Zaloguj", :class => "submit" %>
+  </div>
+</fieldset>
+<% end %>
+
+<p>Nowy uzytkownik? <%= link_to "Zarejestruj się!", signup_path %></p>
+
+

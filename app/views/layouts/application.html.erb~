@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= @title %></title>
+    <%= csrf_meta_tag %>
+    <!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->    
+    <%= stylesheet_link_tag 'blueprint/screen', :media => 'screen' %>
+    <%= stylesheet_link_tag 'blueprint/print',  :media => 'print' %>
+    <!--[if lt IE 8]><%= stylesheet_link_tag 'blueprint/ie' %><![endif]-->
+    <%= stylesheet_link_tag 'custom', :media => 'screen' %>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <%= image_tag("facebook-logo.jpg", :alt => "Twitt") %>
+        <nav class="round">
+          <ul>
+            <li><%= link_to_unless_current "Start", {:controller => "pages", :action => "home"} %></li>
+            <li><%= link_to_unless_current "Pomoc", {:controller => "pages", :action => "help"} %></li>
+            <li><%= link_to_unless_current "Dołącz!", {:controller => "users", :action => "new"} %></li>
+          </ul>
+        </nav>
+      </header>
+      <section class="round">
+        <%= yield %>
+      </section>
+      <footer>		
+	 <nav class="round">
+	    <ul>
+	      <li><%= link_to_unless_current "O nas", '#' %></li>
+	      <li><%= link_to_unless_current "Kontakt", {:controller => "pages", :action => "contact"} %></li>
+	    </ul>
+	  </nav>
+      </footer>
+
+    </div>
+  </body>
+</html>

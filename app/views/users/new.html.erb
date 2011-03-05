@@ -1,0 +1,26 @@
+<h2>Rejestracja</h2>
+<%= form_for(@user) do |f| %>
+<fieldset>
+<legend>Wprowadz dane:</legend>
+
+  <div class="form_row">
+    <%= f.label "Nick" %>
+    <%= f.text_field :name %>
+  </div>
+  <div class="form_row">
+    <%= f.label :email %>
+    <%= f.text_field :email %>
+  </div>
+  <div class="form_row">
+    <%= f.label "Haslo" %>
+    <%= f.password_field :password %>
+  </div>
+  <div class="form_row">
+    <%= f.label "Potwierdz haslo" %>
+    <%= f.password_field :password_confirmation %>
+  </div>
+  <div class="form_row">
+    <%= f.submit "Zapisz sie", :class => "submit" %>
+  </div>
+</fieldset>
+<% end %>
