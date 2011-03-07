@@ -97,23 +97,12 @@ color: blue;
 }
 #left_column {
 float: left;
-width: 300px;
+width: 200px;
 }
 #main_content {
-margin-left: 320px;
+margin-left: 220px;
 }
-
-
-td.sidebar {
-  width: 30%;
-  padding: 1em;
-  vertical-align: top;
-  background: #ccc;
-}
-
 .sidebar_box {
-background-color: #ddd;
-border: 1px solid #aaa;
 font-size: 12px;
 margin-bottom: 10px;
 }
@@ -136,6 +125,7 @@ float: left;
 .sidebar_box .edit_link {
 float: right;
 }
+
 
 h1.micropost {
   margin-bottom: 0.3em;
