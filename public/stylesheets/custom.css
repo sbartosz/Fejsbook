@@ -74,7 +74,18 @@ text-align: right;
 margin-right: 0.2em;
 display: block;
 }
+label_post {
+width: 2em;
+float: left;
+text-align: right;
+margin-right: 0.2em;
+display: block;
+}
 .form_row {
+white-space: nowrap;
+padding-bottom: .5em;
+}
+.form_row_post {
 white-space: nowrap;
 padding-bottom: .5em;
 }
@@ -126,59 +137,23 @@ float: left;
 float: right;
 }
 
-
-h1.micropost {
-  margin-bottom: 0.3em;
+/* Blog Styles */
+.post {
+display: block;
+margin-bottom: 1.5em;
+}
+.post_title {
+font-weight: bold;
+}
+.post_body {
+padding: 1em;
+}
+.post_creation_date, .post_modification_date {
+text-align: right;
+}
+.post_actions {
+float: right;
 }
 
-table.microposts {
-  margin-top: 1em;
-}
 
-table.microposts tr {
-  height: 70px;
-}
-
-table.microposts tr td.gravatar {
-  border-top: 1px solid #ccc;
-  vertical-align: top;
-  width: 50px;
-}
-
-table.microposts tr td.micropost {
-  border-top: 1px solid #ccc;
-  vertical-align: top;
-  padding-top: 10px;
-}
-
-table.microposts tr td.micropost span.timestamp {
-  display: block;
-  font-size: 3px;
-  color: red;
-}
-
-div.user_info img {
-  padding-right: 0.1em;
-}
-
-div.user_info a {
-  text-decoration: none;
-}
-
-div.user_info span.user_name {
-  position: absolute;
-}
-
-div.user_info span.microposts {
-  font-size: 80%;
-}
-
-form.new_micropost {
-  margin-bottom: 2em;
-}
-
-form.new_micropost textarea {
-  height: 4em;
-  margin-bottom: 0;
-}
 

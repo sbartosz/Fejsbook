@@ -43,31 +43,23 @@
 <div id="main_content">
 
 <% if current_user?(@user) %>
+	  <table class="front" summary="">
+	    <tr>
+	      <td class="main">
+		<h1 class="micropost">Dodaj post: </h1>
 
-<%= form_for(@micropost) do |f| %>
-
-<fieldset>
-	<legend>Dodaj post:</legend>
-	<table>		
-		<tr>
-		<td class="label"><strong>Tytuł:</strong></td>
-		<td>   <%= f.text_field :title %></td>
-		</tr>	
-
-		<tr>
-		<td class="label"><strong>Treść:</strong></td>
-		<td> <%= f.text_area :content,:rows => 3, :cols => 50 %></td>
-		</tr>
-
-		<tr>
-		<td class="label"></td>
-		<td><%= f.submit "Wyślij" %></td>
-		</tr>
-	</table>
-</fieldset>
-
-<% end %>
-    
+		<%= form_for @micropost do |f| %>
+		<div class="field">
+		<%= f.text_area :content,:rows => 3, :cols => 50 %>
+		</div>
+		<div class="actions">
+		<%= f.submit "Wyślij" %>
+		</div>
+		<% end %>
+	      </td>
+	   
+	    </tr>
+	  </table>
 <% end %>
 
 
@@ -75,10 +67,10 @@
 
 	<% @microposts.each do |micropost| %>
 
-		<hr>
+
 		<div class="post">
 			<div class="post_title">
-				<b><%= micropost.title %></b>
+				<%= micropost.title %>
 				<% if current_user?(@user) %>
 				<span style="float:right">
 				<%= link_to_unless_current 'Edytuj', '#' %> |
@@ -87,7 +79,7 @@
 				<% end %>
 			</div>
 
-			<div class="post_body"><i><%= micropost.content %></i></div>
+			<div class="post_body"><%= micropost.content %></div>
 
 			<div class="post_creation_date">
 			<span style="float:right">
@@ -96,7 +88,8 @@
 			</div>
 
 		</div>
-		<br />
+
+
 	<% end %>
 
 
